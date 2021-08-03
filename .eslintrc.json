@@ -16,19 +16,6 @@
   },
   "rules": {
     "prettier/prettier": "error", // https://github.com/prettier/eslint-plugin-prettier
-    "comma-dangle": [
-      "error",
-      {
-        // Comma-dangle for all MULTILINE Arrays, Objects
-        "arrays": "always-multiline",
-        "objects": "always-multiline",
-        // Comma-dangle for all MULTILINE Imports, Exports
-        "imports": "always-multiline",
-        "exports": "always-multiline",
-        // Comma-dangle for functions only when the developer decides
-        "functions": "only-multiline"
-      }
-    ],
     "no-plusplus": [
       2,
       {

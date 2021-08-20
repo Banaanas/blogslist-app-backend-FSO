@@ -4,19 +4,13 @@
   "type": "module",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "globalLint": "eslint './'",
+    "pre-commit": "lint-staged",
+    "prepare": "husky install",
+    "prettier": "prettier --write .",
     "start": "cross-env NODE_ENV=production node server.js",
     "start:test": "cross-env NODE_ENV=test node --experimental-vm-modules server.js",
     "test": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.css": "stylelint --fix",
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
     "@types/jest": "^26.0.23",
@@ -42,7 +36,7 @@
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "husky": "^6.0.0",
+    "husky": "^7.0.1",
     "jest": "^27.0.4",
     "json-server": "^0.16.3",
     "lint-staged": "^11.0.0",
@@ -51,6 +45,15 @@
     "supertest": "^6.1.3"
   },
   "@comment scripts": {
+    "globalLint": [
+      "ESLint - Personal ESLint configuration"
+    ],
+    "pre-commit": [
+      "Husky - Pre-Commit Hook - Run Lint Staged (configured in .lintstagedrc file"
+    ],
+    "prettier": [
+      "Prettier"
+    ],
     "start:test": [
       "For Front-End - E2E - Cypress Testing purpose",
       "Unlike the backend integration tests, Cypress tests do not start the system when they are run",
